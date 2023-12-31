@@ -6,7 +6,7 @@ Contains:
 - Conways game of life
 - driving school (a simple console game)
 
-# conways_game_of_life.c
+# conways_game_of_life
 
 A simple, well known program that creates an immersive gamefield with cells living and dying following four rules:
 - Cells with one or less neighbours die
