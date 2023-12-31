@@ -7,6 +7,7 @@ Contains:
 - driving school (a simple console game)
 - perlin noise (Header)
 - procedural generation
+- snake
 
 # conways_game_of_life.c
 
@@ -39,3 +40,7 @@ Creates a procedural pseudo-random landscape using given perlin data. Contains g
 - Zoom in and out
 - Change the level of detail
 - Change the seed
+
+# snake.c
+
+A simple snake game in the console. The player has to move a snake around and eat fruit to grow. Do not crash into yourself!
