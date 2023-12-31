@@ -20,4 +20,5 @@ A little console game where you have to dodge obstacles on a road. Base game con
 - W/S for up/down
 - A/D for left/right
 - X to quit
+
 Score points are added once an obstacle has cleared the screen.
