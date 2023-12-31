@@ -16,4 +16,8 @@ A simple, well known program that creates an immersive gamefield with cells livi
 
 # driving_school
 
-A little console game where you have to dodge obstacles on a road. Base game controls are W/S for up/down, A/D for left/right and X for quitting.
+A little console game where you have to dodge obstacles on a road. Base game controls are:
+- W/S for up/down
+- A/D for left/right
+- X to quit
+Score points are added once an obstacle has cleared the screen.
