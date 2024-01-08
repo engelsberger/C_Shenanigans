@@ -56,4 +56,4 @@ Do not crash into yourself!
 
 Pretty reliably crashes an operating system when executed using memory allocation and cloning itself.
 
-Similiar to a Fork Bomb, see https://en.wikipedia.org/wiki/Fork_bomb
+Similiar to a Fork Bomb, for more on that see https://en.wikipedia.org/wiki/Fork_bomb
