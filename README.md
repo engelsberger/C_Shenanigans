@@ -8,6 +8,7 @@ Contains:
 - perlin_noise.h
 - procedural_generation.c
 - snake.c
+- system_killer.c
 
 # conways_game_of_life.c
 
@@ -50,3 +51,9 @@ A simple snake game in the console. The player has to move a snake around and ea
 - X to quit
 
 Do not crash into yourself!
+
+# system_killer.c
+
+Pretty reliably crashes an operating system when executed using memory allocation and cloning itself.
+
+Similiar to a Fork Bomb, see https://en.wikipedia.org/wiki/Fork_bomb
