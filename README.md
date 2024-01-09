@@ -7,6 +7,7 @@ Contains:
 - driving_school.c (a simple console game)
 - perlin_noise.h
 - procedural_generation.c
+- sinus_wave.c
 - snake.c
 - system_killer.c
 
@@ -44,6 +45,10 @@ Creates a procedural pseudo-random landscape using given perlin data. Contains g
 - Change the level of detail
 - Change the seed
 
+# sinus_wave.c
+
+Produces a customizable sinus wave and prints it to stdout.
+
 # snake.c
 
 A simple snake game in the console. The player has to move a snake around and eat fruit to grow. Base game controls are:
@@ -56,4 +61,4 @@ Do not crash into yourself!
 
 Pretty reliably crashes an operating system when executed using memory allocation and cloning itself.
 
-Similiar to a Fork Bomb, for more on that see https://en.wikipedia.org/wiki/Fork_bomb
+Acts similiar to a Fork Bomb, for more on that see https://en.wikipedia.org/wiki/Fork_bomb
