@@ -3,8 +3,10 @@
 #include <windows.h>
 
 #define HEIGHT 25
-#define WIDTH 60
+#define WIDTH 80
 #define GAME_TICK 10
+#define WAVE_TYPE_SIN 1
+#define WAVE_TYPE_TAN 2
 #define WAVE_WIDTH 3
 #define WAVE_FREQ 0.2
 #define WAVE_INT 1.0
@@ -14,6 +16,8 @@
 #define ICON_WAVE '*'
 #define ICON_EMPTY '.'
 
+#define KEY_TYPE_SIN '1'
+#define KEY_TYPE_TAN '2'
 #define KEY_DIR_RIGHT 'd'
 #define KEY_DIR_LEFT 'a'
 #define KEY_INT_UP 'w'
@@ -28,6 +32,7 @@
 
 
 typedef struct {
+	int type;
 	double width;
 	double frequency;
 	double intensity;
@@ -80,6 +85,7 @@ void draw_game_field(char* game_field, Sinus_Data sinus) {
 	}
 
 	printf("\n");
+	printf("Wave type:       %s       Press %c/%c to change to sin/tan.\n", sinus.type == WAVE_TYPE_SIN ? "sin" : "tan", KEY_TYPE_SIN, KEY_TYPE_TAN);
 	printf("Wave intensity:  %.2f     Press %c/%c to increase/decrease intensity.\n", sinus.intensity, KEY_INT_UP, KEY_INT_DOWN);
 	printf("Wave frequency:  %.2f     Press %c/%c to increase/decrease frequency.\n", sinus.frequency, KEY_FREQ_UP, KEY_FREQ_DOWN);
 	printf("Wave direction:  %s       Press %c/%c to set direction.\n", sinus.direction == 1 ? "<-" : "->", KEY_DIR_LEFT, KEY_DIR_RIGHT);
@@ -92,17 +98,24 @@ void draw_game_field(char* game_field, Sinus_Data sinus) {
 
 void produce_sinus_wave(char* game_field, int step_count, Sinus_Data sinus) {
 
-	double sin_value = 0.0;
+	double value = 0.0;
 	double wave_border = sinus.width * 0.1 / 2;
 
 
 	for (int i = 0; i < WIDTH; i++) {
 
 		for (int j = 0; j < HEIGHT; j++) {
+			
+			switch (sinus.type) {
+			case WAVE_TYPE_SIN:
+				value = sinus.intensity * sin(sinus.frequency * ((double)i + step_count));
+				break;
+			case WAVE_TYPE_TAN:
+				value = sinus.intensity * tan(sinus.frequency * ((double)i + step_count));
+				break;
+			}
 
-			sin_value = sinus.intensity * sin(sinus.frequency * ((double)i + step_count));
-
-			if (j / (HEIGHT - 1.0) * 2 - 1 <= sin_value + wave_border && j / (HEIGHT - 1.0) * 2 - 1 >= sin_value - wave_border)
+			if (j / (HEIGHT - 1.0) * 2 - 1 <= value + wave_border && j / (HEIGHT - 1.0) * 2 - 1 >= value - wave_border)
 				*(game_field + j * WIDTH + i) = ICON_WAVE;
 			else *(game_field + j * WIDTH + i) = ICON_EMPTY;
 		}
@@ -121,6 +134,12 @@ int get_input(Sinus_Data* sinus) {
 
 	if (_kbhit()) {
 		switch (getch()) {
+		case KEY_TYPE_SIN:
+			sinus->type = WAVE_TYPE_SIN;
+			break;
+		case KEY_TYPE_TAN:
+			sinus->type = WAVE_TYPE_TAN;
+			break;
 		case KEY_DIR_LEFT:
 			sinus->direction = 1;
 			break;
@@ -163,7 +182,7 @@ int get_input(Sinus_Data* sinus) {
 int main(int argc, char* argv[]) {
 
 	char game_field[HEIGHT][WIDTH] = { 0 };
-	Sinus_Data sinus = { WAVE_WIDTH, WAVE_FREQ, WAVE_INT, WAVE_DIR, WAVE_SPEED };
+	Sinus_Data sinus = { WAVE_TYPE_SIN, WAVE_WIDTH, WAVE_FREQ, WAVE_INT, WAVE_DIR, WAVE_SPEED };
 	int step_count = 0;
 	double speed_count = 0;
 

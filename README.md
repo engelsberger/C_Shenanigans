@@ -47,7 +47,7 @@ Creates a procedural pseudo-random landscape using given perlin data. Contains g
 
 # sinus_wave.c
 
-Produces a customizable sinus wave and prints it to stdout.
+Produces a customizable sinus (or tangens) wave and prints it to stdout.
 
 # snake.c
 
