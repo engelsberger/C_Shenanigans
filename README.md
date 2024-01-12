@@ -3,6 +3,7 @@
 Simple project ideas I wrote while being bored during lectures.
 
 Contains:
+- ant_colony.c
 - conways_game_of_life.c
 - driving_school.c (a simple console game)
 - perlin_noise.h
@@ -10,6 +11,15 @@ Contains:
 - sinus_wave.c
 - snake.c
 - system_killer.c
+
+# ant_colony.c
+
+Inspired by Langton's Ant, simulates a small ant colony following simple rules for each ant:
+- Each ant moves one step per turn
+- If it lands on a ground field (ICON_GND), it will turn right and turn this field to a small tunnel field (ICON_TURN), as if doing pioneer work
+- If it lands on a small tunnel field (ICON_TURN), it will turn left and turn this field to a large tunnel field (ICON_STRAIGHT), as if building on the foundations
+- If it lands on a large tunnel field (ICON_STRAIGHT), it will go straight and turn this field to a ground field (ICON_GND), as if giving back to the earth
+- If it lands on an air field (ICON_AIR), it will turn around and turn this field to a ground field (ICON_GND), as if building an ant hill
 
 # conways_game_of_life.c
 
