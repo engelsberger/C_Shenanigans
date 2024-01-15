@@ -5,6 +5,7 @@ Simple project ideas I wrote while being bored during lectures.
 Contains:
 - ant_colony.c
 - conways_game_of_life.c
+- dancing_lights.c
 - driving_school.c (a simple console game)
 - perlin_noise.h
 - procedural_generation.c
@@ -28,6 +29,12 @@ A simple, well known program that creates an immersive game field with cells liv
 - Cells with two or three neighbours live on
 - Cells with four or more neighbours die
 - Empty spaces with three neighbours create a new cell
+
+# dancing_lights.c
+
+Creates a nice visual effect using a cellular automaton following these rules:
+- For each cell, the average amount from all neighbors is calculated
+- The value calculated will run through a changer_function()
 
 # driving_school.c
 
