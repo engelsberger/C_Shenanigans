@@ -48,7 +48,7 @@ Score points are added once an obstacle has cleared the screen. Allows for game 
 
 # morse_code.c
 
-Converts a given string to morse code, prints it in live time. Expects exactly one argument.
+Converts a given string to morse code, prints it in real time. Expects exactly one argument.
 
 Letters that do not have a corresponding morse code equivalent will simply be skipped.
 
