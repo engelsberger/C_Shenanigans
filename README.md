@@ -7,6 +7,7 @@ Contains:
 - conways_game_of_life.c
 - dancing_lights.c
 - driving_school.c (a simple console game)
+- morse_code.c
 - perlin_noise.h
 - procedural_generation.c
 - sinus_wave.c
@@ -44,6 +45,12 @@ A little console game where you have to dodge obstacles on a road. Base game con
 - X to quit
 
 Score points are added once an obstacle has cleared the screen. Allows for game customizations within the code via macros.
+
+# morse_code.c
+
+Converts a given string to morse code, prints it in live time. Expects exactly one argument.
+
+Letters that do not have a corresponding morse code equivalent will simply be skipped.
 
 # perlin_noise.h
 
