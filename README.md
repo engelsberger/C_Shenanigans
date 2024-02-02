@@ -4,6 +4,7 @@ Simple project ideas I wrote while being bored during lectures.
 
 Contains:
 - ant_colony.c
+- binary_tree.c
 - conways_game_of_life.c
 - dancing_lights.c
 - driving_school.c (a simple console game)
@@ -22,6 +23,10 @@ Inspired by Langton's Ant, simulates a small ant colony following simple rules f
 - If it lands on a small tunnel field (ICON_TURN), it will turn left and turn this field to a large tunnel field (ICON_STRAIGHT), as if building on the foundations
 - If it lands on a large tunnel field (ICON_STRAIGHT), it will go straight and turn this field to a ground field (ICON_GND), as if giving back to the earth
 - If it lands on an air field (ICON_AIR), it will turn around and turn this field to a ground field (ICON_GND), as if building an ant hill
+
+# binary_tree.c
+
+An implementation of a basic binary search tree.
 
 # conways_game_of_life.c
 
